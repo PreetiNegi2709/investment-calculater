@@ -2,44 +2,48 @@ import LabelledInput from "./LabelledInput";
 
 const Calculator = ({ inputArray, setInputArray, onChange }) => {
   return (
-    <div className="input-group">
-      <div id="user-input">
-        <LabelledInput
-          value={inputArray.initialInvestment}
-          onChange={(e) => {
-            onChange(e, "initialInvestment");
-          }}
-          label="initial investment"
-        />
+    <section id="user-input">
+      <div className="input-group">
+        <p>
+          <LabelledInput
+            value={inputArray.initialInvestment}
+            onChange={(e) => {
+              onChange(e, "initialInvestment");
+            }}
+            label="initial investment"
+          />
+        </p>
+        <p>
+          <LabelledInput
+            value={inputArray.annualInvestment}
+            onChange={(e) => {
+              onChange(e, "annualInvestment");
+            }}
+            label="annual investment"
+          />
+        </p>
       </div>
-      <div id="user-input">
-        <LabelledInput
-          value={inputArray.annualInvestment}
-          onChange={(e) => {
-            onChange(e, "annualInvestment");
-          }}
-          label="annual investment"
-        />
+      <div className="input-group">
+        <p>
+          <LabelledInput
+            value={inputArray.expectedReturn}
+            onChange={(e) => {
+              onChange(e, "expectedReturn");
+            }}
+            label="expected return"
+          />
+        </p>
+        <p>
+          <LabelledInput
+            value={inputArray.duration}
+            onChange={(e) => {
+              onChange(e, "duration");
+            }}
+            label="duration"
+          />
+        </p>
       </div>
-      <div id="user-input">
-        <LabelledInput
-          value={inputArray.expectedReturn}
-          onChange={(e) => {
-            onChange(e, "expectedReturn");
-          }}
-          label="expected return"
-        />
-      </div>
-      <div id="user-input">
-        <LabelledInput
-          value={inputArray.duration}
-          onChange={(e) => {
-            onChange(e, "duration");
-          }}
-          label="duration"
-        />
-      </div>
-    </div>
+    </section>
   );
 };
 
