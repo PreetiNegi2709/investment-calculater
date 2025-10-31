@@ -18,11 +18,11 @@ function App() {
   const handleChanges = (e, dynamicKey) => {
     setInputArray((prevArray) => ({
       ...prevArray,
-      [dynamicKey]: parseInt(e.target.value),
+      [dynamicKey]: +e.target.value,
     }));
   };
 
-  const anuualData = calculateInvestmentResults(inputArray);
+  const annualData = calculateInvestmentResults(inputArray);
 
   return (
     <>
@@ -34,9 +34,7 @@ function App() {
         setInputArray={setInputArray}
         onChange={handleChanges}
       />
-      <DisplayData anuualData={anuualData} />
-      {/* 
-      display results in table */}
+      <DisplayData annualData={annualData} />
     </>
   );
 }

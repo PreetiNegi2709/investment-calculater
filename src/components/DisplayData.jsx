@@ -1,11 +1,11 @@
 import { formatter } from "../util/investment";
-const DisplayData = ({ anuualData }) => {
+const DisplayData = ({ annualData }) => {
   let initialInvestment;
-  if (anuualData.length > 0) {
+  if (annualData.length > 0) {
     initialInvestment =
-      anuualData[0].valueEndOfYear -
-      anuualData[0].interest -
-      anuualData[0].annualInvestment;
+      annualData[0].valueEndOfYear -
+      annualData[0].interest -
+      annualData[0].annualInvestment;
   }
   return (
     <table id="result">
@@ -19,12 +19,12 @@ const DisplayData = ({ anuualData }) => {
         </tr>
       </thead>
       <tbody>
-        {anuualData.length < 1 ? (
+        {annualData.length < 1 ? (
           <tr className="center">
             <td colSpan="5">Incorrect Duration</td>
           </tr>
         ) : (
-          anuualData.map((singleYear) => {
+          annualData.map((singleYear) => {
             const totalInterest =
               singleYear.valueEndOfYear -
               singleYear.annualInvestment * singleYear.year -
